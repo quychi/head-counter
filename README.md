@@ -1,55 +1,62 @@
-<h1 align="center">
-    Dwarves NextJS Boilerplate
-</h1>
-<p align="center">
-    <a href="https://github.com/dwarvesf">
-        <img src="https://img.shields.io/badge/-make%20by%20dwarves-%23e13f5e?style=for-the-badge&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsBAMAAADsqkcyAAAAD1BMVEUAAAD///////////////+PQt5oAAAABXRSTlMAQL//gOnhmfMAAAAJcEhZcwAAHsIAAB7CAW7QdT4AAACYSURBVHicndLRDYJAEIThMbGAI1qAYAO6bAGXYP81uSGBk+O/h3Mev4dhWJCkYZqreOi1xoh0eSIvoCaBRjc1B9+I31g9Z2aJ5jkOsYScBW8zDerO/fObnY/FiTl3caOEH2nMzpyZhezIlgqXr2OlOX617Up/nHnPUg0+LHl18YO50d3ghOy1ioeIq1ceTypsjpvYeJohfQEE5WtH+OEYkwAAAABJRU5ErkJggg==&&logoColor=white" alt="Dwarves Foundation" />
-    </a>
-    <a href="https://discord.gg/dwarvesv">
-        <img src="https://img.shields.io/badge/-join%20the%20community-%235865F2?style=for-the-badge&logo=discord&&logoColor=white" alt="Dwarves Foundation Discord" />
-    </a>
-</p>
+# HeadCounter
 
-An opinionated production-ready frontend boilerplate built on top of NextJS,
-shipped with TypeScript, SWR, TailwindCSS, Jest, testing-library, Cypress, and
-Storybook.
+## What we do?
 
-## Quick Start
+HeadCounter is an innovative recruiting application that simplifies and
+accelerates the recruitment process by leveraging AI and automation. With
+HeadCounter, you can quickly create job descriptions, evaluate candidate CVs
+against job requirements, set up interview sessions, assess candidates, and
+generate interview questions using AI. It's your one-stop solution for efficient
+talent acquisition.
 
-```bash
-git clone --depth=1 git@github.com:dwarvesf/nextjs-boilerplate.git my-project-name
-cd my-project-name
-pnpm install
-```
+![HeadCounter](/HeadCounter.png) <https://mm.tt/app/map/2998022981?t=PpFBZhAkxH>
 
-Then, you can run locally in development mode with live reload:
+## Core Features
 
-```bash
-pnpm dev
-```
+### 1. Rapid Job Description Creation
 
-Open [http://localhost:3000](http://localhost:3000) with your favorite browser
-to see your project.
+- Create job descriptions (JDs) for employers with ease.
+- Simplify the JD creation process by utilizing predefined templates.
+- Employ AI to help draft comprehensive and effective job descriptions quickly.
 
-## Deployment
+### 2. CV Evaluation
 
-| Environment | URL                                        |
-| ----------- | ------------------------------------------ |
-| Prod        | https://df-nextjs-boilerplate.netlify.app/ |
+- Automatically analyze and assess candidate CVs against JD criteria.
+- Speed up the initial screening process to identify the most qualified
+  candidates.
 
-## Resources
+### 3. Fast Interview Session Setup
 
-| Name       | Description | Link                                                 |
-| ---------- | ----------- | ---------------------------------------------------- |
-| UI Docs    | Storybook   | https://df-nextjs-boilerplate-storybook.netlify.app/ |
-| API Docs   | Swagger     | https://demo-api.dwarvesf.com/swagger/index.html     |
-| API Source | Go          | https://github.com/dwarvesf/go-api.git               |
+- Set up interview sessions, including technical, soft skills, and cultural
+  assessments.
+- Easily coordinate interviews for both recruiters and candidates.
 
-## Documentation
+### 4. Scoring and Evaluation
 
-- [Getting started](./docs/GETTING_STARTED.md)
-- [Tech ecosystem](./docs/TECH_ECOSYSTEM.md)
-- [Code style](./docs/CODE_STYLE.md)
-- [Writing tests](./docs/WRITING_TEST.md)
-- [Editor](./docs/EDITOR.md)
-- [Deployment](./docs/DEPLOYMENT.md)
+- Assign scores and evaluate candidates based on interview performance.
+- Provide recommendations and insights for each candidate.
+- Assess the potential of candidates using data-driven insights.
+
+### 5. AI-Powered Question Generation
+
+- Generate interview questions by posting job descriptions and custom templates.
+- Utilize GPT-based chatbot to create interview question templates.
+- Manage interview data in a unified thread identified by a session ID.
+
+### 6. Template Creation
+
+- Develop custom templates for GPT-based question generation.
+- Tailor templates to specific job roles and industries.
+
+### 7. User Authentication
+
+- Implement secure authentication processes for interviewers and recruiters.
+- Ensure data integrity and confidentiality by verifying the identity of users.
+
+## Contributors
+
+- [Giang](https://github.com/giangbimin)
+
+## License
+
+MIT
