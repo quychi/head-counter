@@ -1,7 +1,7 @@
 import { createContext, isSSR } from '@dwarvesf/react-utils'
 import { useCallback, useEffect, useState } from 'react'
 import { WithChildren } from 'types/common'
-import { Me, getMe, login as signIn } from 'api'
+import { Me, login as signIn } from 'api'
 import { emitter } from 'utils/emitter'
 
 interface AuthContextValues {
@@ -29,15 +29,15 @@ const AuthContextProvider = ({ children }: WithChildren) => {
   })
   const [user, setUser] = useState<Me>()
 
-  const login = useCallback(async (email: string, password: string) => {
+  const login = useCallback(async (username: string, password: string) => {
     try {
-      const res = await signIn({ email, password })
+      const res = await signIn({ username, password })
       if (res.data) {
         setIsLogin(true)
         window.localStorage.setItem(tokenKey, res.data.accessToken)
       }
     } catch (error) {
-      throw new Error('Incorrect email or password')
+      throw new Error('Incorrect user name or password')
     }
   }, [])
 
@@ -47,18 +47,19 @@ const AuthContextProvider = ({ children }: WithChildren) => {
   }, [])
 
   const fetchUserInfo = useCallback(async () => {
-    try {
-      const res = await getMe()
-      if (res.data) {
-        setUser(res.data)
-        // Save user info to local storage
-        window.localStorage.setItem(userKey, JSON.stringify(res.data))
-      }
-    } catch {
-      // Failed to fetch user profile -> force logout
-      logout()
-    }
-  }, [logout])
+    // try {
+    //   const res = await getMe()
+    //   if (res.data) {
+    //     setUser(res.data)
+    //     // Save user info to local storage
+    //     window.localStorage.setItem(userKey, JSON.stringify(res.data))
+    //   }
+    // } catch {
+    //   // Failed to fetch user profile -> force logout
+    //   logout()
+    // }
+    // }, [logout])
+  }, [])
 
   useEffect(() => {
     const bootstrapAsync = async () => {

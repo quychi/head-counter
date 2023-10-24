@@ -11,9 +11,28 @@ import { useAuthContext } from 'context/auth'
 import { useEffect, useState } from 'react'
 import { IconBookOpen } from 'components/icons/components/IconBookOpen'
 import { IconSwitchVertical } from 'components/icons/components/IconSwitchVertical'
+import { IconPickUp } from 'components/icons/components/IconPickUp'
 
 const menuItems = [
   { name: 'Dashboard', href: ROUTES.DASHBOARD, Icon: IconHome },
+  {
+    name: 'Matching',
+    href: ROUTES.MATCHING,
+    Icon: IconTable,
+    RightIcon: IconPickUp,
+  },
+  {
+    name: 'Generate Invite Mail',
+    href: ROUTES.GENERATE_INVITE_MAIL,
+    Icon: IconTable,
+    RightIcon: IconPickUp,
+  },
+  {
+    name: 'Job description',
+    href: ROUTES.JOD_DESCRIPTION,
+    Icon: IconTable,
+    RightIcon: IconPickUp,
+  },
   { name: 'Forms', href: ROUTES.FORMS, Icon: IconTable },
   {
     name: 'Data fetching',
@@ -52,7 +71,7 @@ export const Layout = ({ children }: WithChildren) => {
         <div className="space-y-5">
           <Logo hasText />
           <nav className="space-y-1">
-            {menuItems.map(({ Icon, name, href }) => {
+            {menuItems.map(({ Icon, name, href, RightIcon }) => {
               const external = href.startsWith('http')
               return (
                 <Link
@@ -69,7 +88,12 @@ export const Layout = ({ children }: WithChildren) => {
                   rel={external ? 'noopener' : undefined}
                   target={external ? '_blank' : undefined}
                 >
-                  <Icon className="w-6 h-6" /> <span>{name}</span>
+                  <div className="w-full flex justify-between items-center">
+                    <div className="w-full flex gap-1">
+                      <Icon className="w-6 h-6" /> <span>{name}</span>
+                    </div>
+                    {RightIcon ? <RightIcon className="w-11" /> : null}
+                  </div>
                 </Link>
               )
             })}
