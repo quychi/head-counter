@@ -111,12 +111,7 @@ const LoginPage = () => {
               disabled={isLoading}
               type="button"
               fullWidth
-              onClick={() => {
-                onSubmit({
-                  username: 'demo@dwarves.foundation',
-                  password: 'Testing@123',
-                })
-              }}
+              onClick={handleSubmit(onSubmit)}
             >
               Use demo account
             </Button>
