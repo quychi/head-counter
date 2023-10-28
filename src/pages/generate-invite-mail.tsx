@@ -19,20 +19,12 @@ import {
   GENERATE_INVITE_MAIL_FAILED,
   GENERATE_INVITE_MAIL_SUCCESS,
 } from 'constants/messages'
+import { getTextOfFile } from 'utils/getTextOfFile'
 
 const GenerateInviteMailPage = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [generateInviteMailResult, setGenerateInviteMailResult] = useState('')
   const [cVFile, setCVFile] = useState<File | null>(null)
-
-  const getTextContent = (textFile: File) =>
-    new Promise((resolve) => {
-      const reader = new FileReader()
-      reader.readAsText(textFile)
-      reader.onload = () => {
-        resolve(reader.result as string)
-      }
-    })
 
   const generateInviteMail = async () => {
     if (!cVFile) {
@@ -41,8 +33,8 @@ const GenerateInviteMailPage = () => {
 
     try {
       setIsLoading(true)
-      const cVContent = (await getTextContent(cVFile)) as string
-      const prompt = getPersonalInfoPrompt(cVContent)
+      const cVTextContent = await getTextOfFile(cVFile)
+      const prompt = getPersonalInfoPrompt(cVTextContent)
       let openAIRequest = {
         model: OPEN_AI_MODEL,
         messages: [{ role: 'system', content: prompt }],

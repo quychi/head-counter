@@ -21,6 +21,7 @@ import {
   checkCompatibilityPrompt,
   generateSetOfQuestionsPrompt,
 } from 'constants/GPTPrompt'
+import { getTextOfFile } from 'utils/getTextOfFile'
 
 const MatchingPage = () => {
   const [isCheckCompatibility, setCheckCompatibility] = useState(false)
@@ -30,15 +31,6 @@ const MatchingPage = () => {
   const [jDFile, setJDFile] = useState<File | null>(null)
   const [cVFile, setCVFile] = useState<File | null>(null)
 
-  const getTextContent = (textFile: File) =>
-    new Promise((resolve) => {
-      const reader = new FileReader()
-      reader.readAsText(textFile)
-      reader.onload = () => {
-        resolve(reader.result)
-      }
-    })
-
   const checkCompatibility = async () => {
     if (!jDFile || !cVFile) {
       return
@@ -46,8 +38,8 @@ const MatchingPage = () => {
 
     try {
       setCheckCompatibility(true)
-      const jDContent = (await getTextContent(jDFile)) as string
-      const cVContent = (await getTextContent(cVFile)) as string
+      const jDContent = await getTextOfFile(jDFile)
+      const cVContent = await getTextOfFile(cVFile)
       const prompt = checkCompatibilityPrompt(jDContent, cVContent)
       const openAIRequest = {
         model: OPEN_AI_MODEL,
@@ -78,8 +70,8 @@ const MatchingPage = () => {
 
     try {
       setIsGenerateQuestions(true)
-      const jDContent = (await getTextContent(jDFile)) as string
-      const cVContent = (await getTextContent(cVFile)) as string
+      const jDContent = await getTextOfFile(jDFile)
+      const cVContent = await getTextOfFile(cVFile)
       const prompt = generateSetOfQuestionsPrompt(jDContent, cVContent)
       const openAIRequest = {
         model: OPEN_AI_MODEL,
