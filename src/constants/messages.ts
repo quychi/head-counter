@@ -12,4 +12,4 @@ export const GENERATE_INVITE_MAIL_FAILED = 'Generate invite mail failed'
 export const CHECK_COMPATIBILITY_SUCCESS = 'Check compatibility successfully'
 export const CHECK_COMPATIBILITY_FAILED = 'Check compatibility failed'
 
-export const UPLOAD_ICON_MAX_5MB = 'Please upload an icon up to 5MB'
+export const UPLOAD_FILE_MAX_5MB = 'Please upload a file up to 5MB'

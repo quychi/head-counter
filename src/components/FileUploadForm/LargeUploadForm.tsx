@@ -1,6 +1,6 @@
 import { Card } from 'components/Card'
 import { CVFileFormat, MAX_5MB_UPLOAD } from 'constants/file'
-import { UPLOAD_ICON_MAX_5MB } from 'constants/messages'
+import { UPLOAD_FILE_MAX_5MB } from 'constants/messages'
 import React, { useState } from 'react'
 import { FileRejection } from 'react-dropzone'
 import { Button } from 'components/Button'
@@ -31,7 +31,7 @@ export const LargeUploadForm = ({
       .some((file) => file.size > MAX_5MB_UPLOAD)
 
     if (isFileTooLarge) {
-      setErrorUploadMessage(UPLOAD_ICON_MAX_5MB)
+      setErrorUploadMessage(UPLOAD_FILE_MAX_5MB)
     } else {
       setErrorUploadMessage('')
     }
