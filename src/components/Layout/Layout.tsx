@@ -9,8 +9,8 @@ import { Logo } from 'components/Logo'
 import { Header } from 'components/Header'
 import { useAuthContext } from 'context/auth'
 import { useEffect, useState } from 'react'
-import { IconBookOpen } from 'components/icons/components/IconBookOpen'
-import { IconSwitchVertical } from 'components/icons/components/IconSwitchVertical'
+// import { IconBookOpen } from 'components/icons/components/IconBookOpen'
+// import { IconSwitchVertical } from 'components/icons/components/IconSwitchVertical'
 import { IconPickUp } from 'components/icons/components/IconPickUp'
 
 const menuItems = [
@@ -27,23 +27,23 @@ const menuItems = [
     Icon: IconTable,
     RightIcon: IconPickUp,
   },
-  {
-    name: 'Job description',
-    href: ROUTES.JOD_DESCRIPTION,
-    Icon: IconTable,
-    RightIcon: IconPickUp,
-  },
-  { name: 'Forms', href: ROUTES.FORMS, Icon: IconTable },
-  {
-    name: 'Data fetching',
-    href: ROUTES.DATA_FETCHING,
-    Icon: IconSwitchVertical,
-  },
-  {
-    name: 'Documentation',
-    href: 'https://github.com/dwarvesf/nextjs-boilerplate',
-    Icon: IconBookOpen,
-  },
+  // {
+  //   name: 'Job description',
+  //   href: ROUTES.JOD_DESCRIPTION,
+  //   Icon: IconTable,
+  //   RightIcon: IconPickUp,
+  // },
+  // { name: 'Forms', href: ROUTES.FORMS, Icon: IconTable },
+  // {
+  //   name: 'Data fetching',
+  //   href: ROUTES.DATA_FETCHING,
+  //   Icon: IconSwitchVertical,
+  // },
+  // {
+  //   name: 'Documentation',
+  //   href: 'https://github.com/dwarvesf/nextjs-boilerplate',
+  //   Icon: IconBookOpen,
+  // },
 ]
 
 export const Layout = ({ children }: WithChildren) => {

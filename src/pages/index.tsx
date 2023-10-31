@@ -1,67 +1,68 @@
 import { Layout } from 'components/Layout'
 import { Heading } from 'components/Heading'
-import { Card } from 'components/Card'
-import { Text } from 'components/Text'
-import { useAuthContext } from 'context/auth'
-import { formatNumber } from 'utils/formatNumber'
-import { Badge } from 'components/Badge'
-import { IconArrowSmUp } from 'components/icons/components/IconArrowSmUp'
-import { IconArrowSmDown } from 'components/icons/components/IconArrowSmDown'
-import { IconPaperClip } from 'components/icons/components/IconPaperClip'
+// import { Card } from 'components/Card'
+// import { Text } from 'components/Text'
+// import { useAuthContext } from 'context/auth'
+// import { formatNumber } from 'utils/formatNumber'
+// import { Badge } from 'components/Badge'
+// import { IconArrowSmUp } from 'components/icons/components/IconArrowSmUp'
+// import { IconArrowSmDown } from 'components/icons/components/IconArrowSmDown'
+// import { IconPaperClip } from 'components/icons/components/IconPaperClip'
 
-interface StatCardProps {
-  title: string
-  from: number
-  to: number
-  suffix?: string
-}
+// interface StatCardProps {
+//   title: string
+//   from: number
+//   to: number
+//   suffix?: string
+// }
+// 
+// const StatCard = (props: StatCardProps) => {
+//   const { title, suffix, from, to } = props
+//   const isGrowth = to > from
 
-const StatCard = (props: StatCardProps) => {
-  const { title, suffix, from, to } = props
-  const isGrowth = to > from
-
-  return (
-    <Card>
-      <Heading as="h5" className="mb-1 !font-medium !text-gray-700 !text-base">
-        {title}
-      </Heading>
-      <div className="flex justify-between items-end">
-        <div className="flex space-x-2 items-end">
-          <Text as="span" className="text-2xl font-medium text-pink-500">
-            {formatNumber(to)}
-            {suffix}
-          </Text>
-          <Text as="span" className="text-sm mb-1 text-gray-500">
-            from {formatNumber(from)}
-            {suffix}
-          </Text>
-        </div>
-        <Badge className="pl-1" type={isGrowth ? 'success' : 'error'}>
-          {isGrowth ? (
-            <IconArrowSmUp className="text-green-500 w-5 h-5" />
-          ) : (
-            <IconArrowSmDown className="text-red-500 w-5 h-5" />
-          )}
-          20.2%
-        </Badge>
-      </div>
-    </Card>
-  )
-}
+//   return (
+//     <Card>
+//       <Heading as="h5" className="mb-1 !font-medium !text-gray-700 !text-base">
+//         {title}
+//       </Heading>
+//       <div className="flex justify-between items-end">
+//         <div className="flex space-x-2 items-end">
+//           <Text as="span" className="text-2xl font-medium text-pink-500">
+//             {formatNumber(to)}
+//             {suffix}
+//           </Text>
+//           <Text as="span" className="text-sm mb-1 text-gray-500">
+//             from {formatNumber(from)}
+//             {suffix}
+//           </Text>
+//         </div>
+//         <Badge className="pl-1" type={isGrowth ? 'success' : 'error'}>
+//           {isGrowth ? (
+//             <IconArrowSmUp className="text-green-500 w-5 h-5" />
+//           ) : (
+//             <IconArrowSmDown className="text-red-500 w-5 h-5" />
+//           )}
+//           20.2%
+//         </Badge>
+//       </div>
+//     </Card>
+//   )
+// }
 
 const DashboardPage = () => {
-  const { user } = useAuthContext()
+  // const { user } = useAuthContext()
 
   return (
     <Layout>
       <div className="space-y-px">
-        <Heading as="h3">Good afternoon, {user?.fullName}</Heading>
+        <Heading as="h3">Good afternoon</Heading>
+        {/*<Heading as="h3">Good afternoon, {user?.fullName}</Heading>
         <Text className="text-gray-500">
           Here's what's happenning with your ambassador account today.
-        </Text>
+        </Text> */}
       </div>
 
-      <div className="grid-cols-3 grid gap-6">
+      {/* <div className="grid-cols-3 grid gap-6">
         <StatCard from={70946} title="Total Subscribers" to={71897} />
         <StatCard from={56.14} suffix="%" title="Avg. Open Rate" to={58.16} />
         <StatCard from={28.62} suffix="%" title="Avg. Click Rate" to={24.57} />
@@ -213,7 +214,7 @@ const DashboardPage = () => {
             </div>
           </Card>
         </div>
-      </div>
+      </div> */}
     </Layout>
   )
 }
